@@ -1,0 +1,260 @@
+2025-06-11 17:16:11 [ERROR]: POST /api/skills/ - Cannot destructure property 'name' of 'req.body' as it is undefined.
+STACK: TypeError: Cannot destructure property 'name' of 'req.body' as it is undefined.
+    at createSkill (file:///D:/FULLSTACK/one-lans/controllers/skills.controller.js:5:13)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at file:///D:/FULLSTACK/one-lans/middlewares/validate.js:10:5
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+2025-06-11 18:23:39 [ERROR]: POST /api/contract - insert or update on table "contracts" violates foreign key constraint "contracts_client_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async contracts.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createContract (file:///D:/FULLSTACK/one-lans/controllers/controllers.controller.js:9:22)
+2025-06-11 18:25:02 [ERROR]: POST /api/contract - insert or update on table "contracts" violates foreign key constraint "contracts_client_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async contracts.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createContract (file:///D:/FULLSTACK/one-lans/controllers/controllers.controller.js:9:22)
+2025-06-11 18:26:32 [ERROR]: POST /api/contract - insert or update on table "contracts" violates foreign key constraint "contracts_freelancer_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async contracts.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createContract (file:///D:/FULLSTACK/one-lans/controllers/controllers.controller.js:9:22)
+2025-06-12 10:56:59 [ERROR]: GET /api/review - clients is associated to reviews multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.
+STACK: SequelizeEagerLoadingError: clients is associated to reviews multiple times. To identify the correct association, you must use the 'as' keyword to specify the alias of the association you want to include.
+    at reviews._getIncludedAssociation (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:580:13)
+    at reviews._validateIncludedElement (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:502:53)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:421:37
+    at Array.map (<anonymous>)
+    at reviews._validateIncludedElements (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:417:39)
+    at reviews.findAll (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1124:12)
+    at async getAllReviews (file:///D:/FULLSTACK/one-lans/controllers/review.controller.js:21:21)
+2025-06-12 11:04:44 [ERROR]: POST /api/review - insert or update on table "reviews" violates foreign key constraint "reviews_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async reviews.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createReview (file:///D:/FULLSTACK/one-lans/controllers/review.controller.js:8:20)
+2025-06-12 11:05:41 [ERROR]: POST /api/review - insert or update on table "reviews" violates foreign key constraint "reviews_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async reviews.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createReview (file:///D:/FULLSTACK/one-lans/controllers/review.controller.js:8:20)
+2025-06-12 11:22:42 [ERROR]: POST /api/message - notNull Violation: messages.contract_id cannot be null,
+notNull Violation: messages.sender_id cannot be null,
+notNull Violation: messages.sender_type cannot be null,
+notNull Violation: messages.content cannot be null
+STACK: SequelizeValidationError: notNull Violation: messages.contract_id cannot be null,
+notNull Violation: messages.sender_id cannot be null,
+notNull Violation: messages.sender_type cannot be null,
+notNull Violation: messages.content cannot be null
+    at InstanceValidator._validate (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\instance-validator.js:50:13)
+    at async InstanceValidator._validateAndRunHooks (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\instance-validator.js:60:7)
+    at async InstanceValidator.validate (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\instance-validator.js:54:12)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2426:7)
+    at async messages.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createMessage (file:///D:/FULLSTACK/one-lans/controllers/message.controller.js:8:21)
+2025-06-12 11:24:12 [ERROR]: POST /api/message - insert or update on table "messages" violates foreign key constraint "messages_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async messages.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createMessage (file:///D:/FULLSTACK/one-lans/controllers/message.controller.js:8:21)
+2025-06-12 11:57:48 [ERROR]: GET /api/services/used?start_date=2024-01-01&end_date=2024-12-31 - column contracts.createdAt does not exist
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.select (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async contracts.findAll (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1140:21)
+    at async getServicesUsedInDateRange (file:///D:/FULLSTACK/one-lans/controllers/services.controller.js:121:23)
+2025-06-12 11:58:32 [ERROR]: GET /api/services/used?start_date=2024-01-01&end_date=2024-12-31 - column contracts.createdAt does not exist
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.select (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async contracts.findAll (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1140:21)
+    at async getServicesUsedInDateRange (file:///D:/FULLSTACK/one-lans/controllers/services.controller.js:121:23)
+2025-06-12 12:26:44 [ERROR]: GET /api/freelancer/topFreelancerByService?service_title=Web - Contract is not defined
+STACK: ReferenceError: Contract is not defined
+    at getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/freelancer.controller.js:293:28)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+    at processParams (D:\FULLSTACK\one-lans\node_modules\router\index.js:582:12)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\index.js:291:5)
+    at Function.handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:186:3)
+2025-06-12 12:28:01 [ERROR]: GET /api/freelancer/topFreelancerByService?service_title=test - Contract is not defined
+STACK: ReferenceError: Contract is not defined
+    at getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/freelancer.controller.js:293:28)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+    at processParams (D:\FULLSTACK\one-lans\node_modules\router\index.js:582:12)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\index.js:291:5)
+    at Function.handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:186:3)
+2025-06-12 12:30:13 [ERROR]: GET /api/freelancer/topFreelancerByService?service_title=test - Contract is not defined
+STACK: ReferenceError: Contract is not defined
+    at getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/freelancer.controller.js:294:28)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+    at processParams (D:\FULLSTACK\one-lans\node_modules\router\index.js:582:12)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\index.js:291:5)
+    at Function.handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:186:3)
+2025-06-12 12:34:59 [ERROR]: GET /api/freelancer/topFreelancerByService?service_title=test - Contract is not defined
+STACK: ReferenceError: Contract is not defined
+    at getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/freelancer.controller.js:294:28)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+    at processParams (D:\FULLSTACK\one-lans\node_modules\router\index.js:582:12)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\index.js:291:5)
+    at Function.handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:186:3)
+2025-06-12 12:35:38 [ERROR]: GET /api/freelancer/topFreelancerByService?service_title=test - Contract is not defined
+STACK: ReferenceError: Contract is not defined
+    at getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/freelancer.controller.js:294:28)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+    at processParams (D:\FULLSTACK\one-lans\node_modules\router\index.js:582:12)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\index.js:291:5)
+    at Function.handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:186:3)
+2025-06-12 12:38:12 [ERROR]: GET /api/freelancer/topFreelancerByService?service_title=test - Op is not defined
+STACK: ReferenceError: Op is not defined
+    at getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/freelancer.controller.js:300:23)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+    at processParams (D:\FULLSTACK\one-lans\node_modules\router\index.js:582:12)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\index.js:291:5)
+    at Function.handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:186:3)
+2025-06-12 12:38:55 [ERROR]: GET /api/freelancer/topFreelancerByService?service_title=test - sequelize is not defined
+STACK: ReferenceError: sequelize is not defined
+    at getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/freelancer.controller.js:312:10)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+    at processParams (D:\FULLSTACK\one-lans\node_modules\router\index.js:582:12)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\index.js:291:5)
+    at Function.handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:186:3)
+2025-06-12 12:40:43 [ERROR]: GET /api/freelancer/topFreelancerByService?service_title=test - column reference "freelancer_id" is ambiguous
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.select (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async contracts.findAll (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1140:21)
+    at async getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/freelancer.controller.js:297:28)
+2025-06-12 13:43:17 [ERROR]: POST /api/services - insert or update on table "services" violates foreign key constraint "services_freelancer_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async services.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createService (file:///D:/FULLSTACK/one-lans/controllers/services.controller.js:9:21)
+2025-06-12 13:44:48 [ERROR]: POST /api/contract - insert or update on table "contracts" violates foreign key constraint "contracts_client_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async contracts.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createContract (file:///D:/FULLSTACK/one-lans/controllers/contract.controller.js:9:22)
+2025-06-12 13:45:00 [ERROR]: POST /api/contract - insert or update on table "contracts" violates foreign key constraint "contracts_client_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async contracts.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createContract (file:///D:/FULLSTACK/one-lans/controllers/contract.controller.js:9:22)
+2025-06-12 13:45:05 [ERROR]: POST /api/contract - insert or update on table "contracts" violates foreign key constraint "contracts_service_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async contracts.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createContract (file:///D:/FULLSTACK/one-lans/controllers/contract.controller.js:9:22)
+2025-06-12 13:46:24 [ERROR]: POST /api/review - insert or update on table "reviews" violates foreign key constraint "reviews_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async reviews.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createReview (file:///D:/FULLSTACK/one-lans/controllers/review.controller.js:8:20)
+2025-06-12 13:46:36 [ERROR]: POST /api/review - insert or update on table "reviews" violates foreign key constraint "reviews_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async reviews.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createReview (file:///D:/FULLSTACK/one-lans/controllers/review.controller.js:8:20)
+2025-06-12 13:47:34 [ERROR]: POST /api/message - insert or update on table "messages" violates foreign key constraint "messages_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async messages.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createMessage (file:///D:/FULLSTACK/one-lans/controllers/message.controller.js:8:21)

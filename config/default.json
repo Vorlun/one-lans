@@ -1,0 +1,35 @@
+{
+  "port": 3434,
+  "db_host": "localhost",
+  "db_username": "postgres",
+  "db_port": 5432,
+  "db_password": "1402",
+  "db_name": "one-lans",
+"jwt": {
+  "admin": {
+    "accessSecret": "admin-access-secret",
+    "refreshSecret": "admin-refresh-secret",
+    "accessExpiresIn": "10m",
+    "refreshExpiresInDays": 3
+  },
+  "client": {
+    "accessSecret": "client-access-secret",
+    "refreshSecret": "client-refresh-secret",
+    "accessExpiresIn": "15m",
+    "refreshExpiresInDays": 7
+  },
+  "freelancer": {
+    "accessSecret": "freelancer-access-secret",
+    "refreshSecret": "freelancer-refresh-secret",
+    "accessExpiresIn": "20m",
+    "refreshExpiresInDays": 5
+  },
+  "cookieMaxAge": 604800000
+},
+  "smtp": {
+    "user": "humoyunruzimurodov77@gmail.com",
+    "password": "uzxe puuy btvl fxik",
+    "host": "smtp.gmail.com",
+    "port": 587
+  }
+}
