@@ -1,27 +1,53 @@
 import { jwtServices } from "../../services/jwt.service.js";
 
-export default (role) => {
-  return async (req, res, next) => {
+/**
+ * Auth Guard Middleware
+ * @param {string[]} allowedRoles - e.g., ['admin', 'super_admin', 'client', 'freelancer']
+ */
+export default function authGuard(allowedRoles = []) {
+  return (req, res, next) => {
     try {
       const authHeader = req.headers.authorization;
       if (!authHeader || !authHeader.startsWith("Bearer ")) {
         return res
           .status(401)
-          .json({ message: "Authorization token required" });
+          .json({ message: "Authorization token required." });
       }
 
       const token = authHeader.split(" ")[1];
-      const jwtService = role && role in jwtServices ? jwtServices[role] : null;
+      let decoded = null;
+      let matchedRole = null;
 
-      if (!jwtService) {
-        return res.status(400).json({ message: "Invalid role type" });
+      for (const [roleKey, service] of Object.entries(jwtServices)) {
+        try {
+          const tempDecoded = service.verifyAccessToken(token);
+
+          if (
+            allowedRoles.includes("super_admin") &&
+            tempDecoded.role === "admin" &&
+            tempDecoded.admin_type === "super_admin"
+          ) {
+            decoded = tempDecoded;
+            matchedRole = "admin";
+            break;
+          }          
+
+          if (allowedRoles.includes(tempDecoded.role)) {
+            decoded = tempDecoded;
+            matchedRole = tempDecoded.role;
+            break;
+          }
+        } catch {}
       }
 
-      const decoded = jwtService.verifyAccessToken(token);
+      if (!decoded || !matchedRole) {
+        return res.status(403).json({ message: "Invalid or expired token." });
+      }
+
       req.user = decoded;
       next();
     } catch (error) {
-      return res.status(403).json({ message: "Invalid or expired token" });
+      return res.status(403).json({ message: "Unauthorized access." });
     }
   };
-};
+}

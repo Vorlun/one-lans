@@ -80,6 +80,30 @@ export const getPaymentById = async (req, res, next) => {
   }
 };
 
+export const updatePayment = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const updates = req.body;
+
+    const payment = await Payment.findByPk(id);
+    if (!payment) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Payment not found" });
+    }
+
+    await payment.update(updates);
+
+    res.status(200).json({
+      success: true,
+      message: "Payment updated successfully",
+      data: payment,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
 export const deletePayment = async (req, res, next) => {
   try {
     const payment = await Payment.findByPk(req.params.id);

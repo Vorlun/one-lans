@@ -8,6 +8,7 @@ import { Service } from "../models/services.model.js";
 import { Op } from "sequelize";
 import { Freelancer } from "../models/freelancer.model.js";
 import { Category } from "../models/categories.model.js";
+import { Payment } from "../models/payment.model.js";
 
 
 const findClientByIdOrThrow = async (id) => {
@@ -261,19 +262,24 @@ export const verifyClientEmail = async (req, res, next) => {
   }
 };
 
-export const getClientsUsedServicesInDateRange = async (req, res, next) => {
+export const getClientsCancelledServicesInDateRange = async (
+  req,
+  res,
+  next
+) => {
   try {
     const { start_date, end_date } = req.query;
 
     if (!start_date || !end_date) {
       return res.status(400).json({
         success: false,
-        message: "start_date va end_date query parametrlari talab qilinadi",
+        message: "start_date and end_date query parameters are required",
       });
     }
 
     const contracts = await Contract.findAll({
       where: {
+        status_id: 1, // assuming 1 means cancelled
         start_date: {
           [Op.between]: [new Date(start_date), new Date(end_date)],
         },
@@ -285,115 +291,89 @@ export const getClientsUsedServicesInDateRange = async (req, res, next) => {
         },
         {
           model: Service,
-          attributes: ["id", "title", "price"],
-        },
-      ],
-    });
-
-    const clientsMap = new Map();
-    contracts.forEach((contract) => {
-      if (contract.client) {
-        clientsMap.set(contract.client.id, contract.client);
-      }
-    });
-
-    const uniqueClients = Array.from(clientsMap.values());
-
-    res.status(200).json({
-      success: true,
-      message: "Berilgan sanalar oraligida xizmatdan foydalangan klientlar",
-      data: uniqueClients,
-    });
-  } catch (err) {
-    next(err);
-  }
-};
-
-export const getClientsCancelledServicesInDateRange = async (req,res,next) => {
-  try {
-    const { start_date, end_date } = req.query;
-
-    if (!start_date || !end_date) {
-      return res.status(400).json({
-        success: false,
-        message: "start_date va end_date query parametrlari kerak",
-      });
-    }
-
-    const cancelledContracts = await Contract.findAll({
-      where: {
-        status_id: 1,
-        start_date: {
-          [Op.between]: [new Date(start_date), new Date(end_date)],
-        },
-      },
-      include: [
-        {
-          model: Client,
-          attributes: ["id", "full_name", "email"],
-        },
-        {
-          model: Service,
           include: [
-            { model: Freelancer, attributes: ["id", "full_name", "email"] },
+            { model: Freelancer, attributes: ["id", "full_name"] },
             { model: Category, attributes: ["id", "name"] },
           ],
         },
       ],
     });
 
-    const cancelledClients = cancelledContracts
-      .map((contract) => contract.client)
+    const clients = contracts
+      .map((c) => c.client)
       .filter(
         (client, index, self) =>
-          index === self.findIndex((c) => c?.id === client?.id)
+          client && self.findIndex((x) => x.id === client.id) === index
       );
 
     res.status(200).json({
       success: true,
-      message: "Bekor qilingan xizmatlardan foydalangan clientlar ro'yxati",
-      data: cancelledClients,
+      message: `Clients who cancelled services between ${start_date} and ${end_date}`,
+      data: clients,
     });
   } catch (err) {
     next(err);
   }
 };
 
-export const getClientPaymentsWithOwners = async (req, res, next) => {
+export const getClientPaymentsWithServicesAndOwners = async (
+  req,
+  res,
+  next
+) => {
   try {
     const { client_id } = req.params;
 
-    const contracts = await Contract.findAll({
-      where: { client_id },
+    const payments = await Payment.findAll({
       include: [
         {
-          model: Service,
-          attributes: ["id", "title", "price"],
-        },
-        {
-          model: Freelancer,
-          attributes: ["id", "full_name", "email"],
-        },
-        {
-          model: Client,
-          attributes: ["id", "full_name", "email"],
+          model: Contract,
+          required: true,
+          where: { client_id },
+          include: [
+            {
+              model: Service,
+              attributes: ["id", "title", "price"],
+              include: [
+                {
+                  model: Freelancer,
+                  attributes: ["id", "full_name", "email"],
+                },
+              ],
+            },
+            {
+              model: Client,
+              attributes: ["id", "full_name", "email"],
+            },
+          ],
         },
       ],
+      order: [["paid_at", "DESC"]],
     });
 
-    const payments = contracts.map(contract => ({
-      client: contract.client,
-      service: contract.service,
-      owner: contract.freelancer,
-      price: contract.service?.price,
-      start_date: contract.start_date,
-      end_date: contract.end_date,
+    const result = payments.map((payment) => ({
+      payment_id: payment.id,
+      amount: payment.amount,
+      currency: payment.currency,
+      method: payment.payment_method,
+      paid_at: payment.paid_at,
+      status: payment.status,
+      service: {
+        id: payment.contract.service?.id,
+        title: payment.contract.service?.title,
+        price: payment.contract.service?.price,
+      },
+      owner: payment.contract.service?.freelancer,
+      client: payment.contract.client,
+      start_date: payment.contract.start_date,
+      end_date: payment.contract.end_date,
     }));
 
     res.status(200).json({
       success: true,
-      message: "Client tomonidan amalga oshirilgan paymentlar ro'yxati",
-      data: payments,
+      message:
+        "Client tomonidan amalga oshirilgan paymentlar ro'yxati (xizmat va freelancer bilan)",
+      data: result,
     });
   } catch (err) {
     next(err);

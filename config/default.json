@@ -6,22 +6,28 @@
   "db_password": "1402",
   "db_name": "one-lans",
 "jwt": {
+  "super_admin": {
+    "accessSecret": "super-admin-access-secret",
+    "refreshSecret": "super-admin-refresh-secret",
+    "accessExpiresIn": "200m",
+    "refreshExpiresInDays": 5
+  },
   "admin": {
     "accessSecret": "admin-access-secret",
     "refreshSecret": "admin-refresh-secret",
-    "accessExpiresIn": "10m",
+    "accessExpiresIn": "100m",
     "refreshExpiresInDays": 3
   },
   "client": {
     "accessSecret": "client-access-secret",
     "refreshSecret": "client-refresh-secret",
-    "accessExpiresIn": "15m",
+    "accessExpiresIn": "150m",
     "refreshExpiresInDays": 7
   },
   "freelancer": {
     "accessSecret": "freelancer-access-secret",
     "refreshSecret": "freelancer-refresh-secret",
-    "accessExpiresIn": "20m",
+    "accessExpiresIn": "200m",
     "refreshExpiresInDays": 5
   },
   "cookieMaxAge": 604800000

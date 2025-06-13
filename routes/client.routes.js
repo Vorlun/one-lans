@@ -13,18 +13,16 @@ import {
   updateClient,
   deleteClient,
   verifyClientEmail,
-  getClientsUsedServicesInDateRange,
   getClientsCancelledServicesInDateRange,
-  getClientPaymentsWithOwners,
+  getClientPaymentsWithServicesAndOwners,
 } from "../controllers/client.controller.js";
 import { changePassword } from "../controllers/admin.controller.js";
 
 const router = express.Router();
 
 router.get("/", getAllClients);
-router.get("/payments/:client_id", getClientPaymentsWithOwners);
+router.get("/:client_id/payments/details",getClientPaymentsWithServicesAndOwners);
 router.get("/cancelled-clients", getClientsCancelledServicesInDateRange);
-router.get("/used-services", getClientsUsedServicesInDateRange);
 router.get("/:id", validateParams(idParamValidation), getClientById);
 router.post("/", validateBody(clientCreateValidation), createClient);
 router.patch(

@@ -7,18 +7,40 @@ export const Admin = sequelize.define(
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true, 
+      autoIncrement: true,
     },
-    full_name: { type: DataTypes.STRING, allowNull: false },
-    email: { type: DataTypes.STRING, allowNull: false, unique: true },
-    password_hash: { type: DataTypes.STRING, allowNull: false },
-    is_active: { type: DataTypes.BOOLEAN, defaultValue: true },
-    role: {
-      type: DataTypes.ENUM("super_admin", "moderator"),
+    full_name: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    created_at: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
-    updated_at: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password_hash: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    is_active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    role: {
+      type: DataTypes.ENUM("super_admin", "admin"),
+      allowNull: false,
+      defaultValue: "admin",
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+    },
+    updated_at: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+    },
   },
-  { timestamps: false }
+  {
+    timestamps: false,
+  }
 );

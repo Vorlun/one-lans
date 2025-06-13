@@ -13,14 +13,12 @@ import {
   updateFreelancer,
   deleteFreelancer,
   verifyFreelancerEmail,
-  getTopFreelancersByService,
 } from "../controllers/freelancer.controller.js";
 import { changePassword } from "../controllers/admin.controller.js";
 
 const router = express.Router();
 
 router.get("/", getAllFreelancers);
-router.get("/topFreelancerByService", getTopFreelancersByService);
 router.get("/:id", validateParams(idParamValidation), getFreelancerById);
 router.post("/", validateBody(freelancerCreateValidation), createFreelancer);
 router.patch(

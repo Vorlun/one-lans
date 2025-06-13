@@ -258,3 +258,137 @@ STACK: Error
     at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
     at async messages.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
     at async createMessage (file:///D:/FULLSTACK/one-lans/controllers/message.controller.js:8:21)
+2025-06-13 11:34:57 [ERROR]: Fatal error starting server: tre is not defined
+2025-06-13 11:36:21 [ERROR]: GET /api/client/2 - Client not found
+STACK: Error: Client not found
+    at findClientByIdOrThrow (file:///D:/FULLSTACK/one-lans/controllers/client.controller.js:19:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async getClientById (file:///D:/FULLSTACK/one-lans/controllers/client.controller.js:146:20)
+2025-06-13 11:38:53 [ERROR]: POST /api/services - insert or update on table "services" violates foreign key constraint "services_freelancer_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async services.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createService (file:///D:/FULLSTACK/one-lans/controllers/services.controller.js:9:21)
+2025-06-13 11:39:03 [ERROR]: POST /api/services - insert or update on table "services" violates foreign key constraint "services_freelancer_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async services.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createService (file:///D:/FULLSTACK/one-lans/controllers/services.controller.js:9:21)
+2025-06-13 11:49:32 [ERROR]: POST /api/services - insert or update on table "services" violates foreign key constraint "services_category_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async services.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createService (file:///D:/FULLSTACK/one-lans/controllers/services.controller.js:9:21)
+2025-06-13 12:59:52 [ERROR]: GET /api/services/top-freelancers?service_title=front - fn is not defined
+STACK: ReferenceError: fn is not defined
+    at getTopFreelancersByService (file:///D:/FULLSTACK/one-lans/controllers/services.controller.js:230:19)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\FULLSTACK\one-lans\node_modules\router\lib\route.js:117:3)
+    at handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\FULLSTACK\one-lans\node_modules\router\lib\layer.js:152:17)
+    at D:\FULLSTACK\one-lans\node_modules\router\index.js:295:15
+    at processParams (D:\FULLSTACK\one-lans\node_modules\router\index.js:582:12)
+    at next (D:\FULLSTACK\one-lans\node_modules\router\index.js:291:5)
+    at Function.handle (D:\FULLSTACK\one-lans\node_modules\router\index.js:186:3)
+2025-06-13 13:52:46 [ERROR]: POST /api/review - insert or update on table "reviews" violates foreign key constraint "reviews_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async reviews.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createReview (file:///D:/FULLSTACK/one-lans/controllers/review.controller.js:8:20)
+2025-06-13 13:52:56 [ERROR]: POST /api/review - insert or update on table "reviews" violates foreign key constraint "reviews_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async reviews.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createReview (file:///D:/FULLSTACK/one-lans/controllers/review.controller.js:8:20)
+2025-06-13 13:58:31 [ERROR]: POST /api/message - insert or update on table "messages" violates foreign key constraint "messages_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async messages.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createMessage (file:///D:/FULLSTACK/one-lans/controllers/message.controller.js:8:21)
+2025-06-13 13:58:39 [ERROR]: POST /api/message - insert or update on table "messages" violates foreign key constraint "messages_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async messages.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createMessage (file:///D:/FULLSTACK/one-lans/controllers/message.controller.js:8:21)
+2025-06-13 14:01:46 [ERROR]: Fatal error starting server: force is not defined
+2025-06-13 14:08:19 [ERROR]: POST /api/services - insert or update on table "services" violates foreign key constraint "services_category_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async services.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createService (file:///D:/FULLSTACK/one-lans/controllers/services.controller.js:10:21)
+2025-06-13 14:11:16 [ERROR]: POST /api/review - insert or update on table "reviews" violates foreign key constraint "reviews_contract_id_fkey"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async reviews.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createReview (file:///D:/FULLSTACK/one-lans/controllers/review.controller.js:8:20)
+2025-06-13 14:29:21 [ERROR]: POST /api/client/ - Validation error
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async clients.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createClient (file:///D:/FULLSTACK/one-lans/controllers/client.controller.js:58:20)
+2025-06-13 14:29:42 [ERROR]: POST /api/client/ - Validation error
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async clients.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async createClient (file:///D:/FULLSTACK/one-lans/controllers/client.controller.js:58:20)
+2025-06-13 15:00:45 [ERROR]: POST /api/auth/admin/login - Configuration property "jwt.super_admin.refreshExpiresInDays" is not defined
+STACK: Error: Configuration property "jwt.super_admin.refreshExpiresInDays" is not defined
+    at Config.get (D:\FULLSTACK\one-lans\node_modules\config\lib\config.js:181:11)
+    at Object.save (file:///D:/FULLSTACK/one-lans/services/refreshToken.service.js:9:25)
+    at async login (file:///D:/FULLSTACK/one-lans/controllers/auth.controller.js:29:5)
+2025-06-13 15:02:51 [ERROR]: POST /api/auth/admin/login - Configuration property "jwt.super_admin.refreshExpiresInDays" is not defined
+STACK: Error: Configuration property "jwt.super_admin.refreshExpiresInDays" is not defined
+    at Config.get (D:\FULLSTACK\one-lans\node_modules\config\lib\config.js:181:11)
+    at Object.save (file:///D:/FULLSTACK/one-lans/services/refreshToken.service.js:9:25)
+    at async login (file:///D:/FULLSTACK/one-lans/controllers/auth.controller.js:29:5)
+2025-06-13 15:04:29 [ERROR]: POST /api/auth/admin/login - invalid input value for enum enum_refresh_tokens_role: "super_admin"
+STACK: Error
+    at Query.run (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\postgres\query.js:50:25)
+    at D:\FULLSTACK\one-lans\node_modules\sequelize\lib\sequelize.js:315:28
+    at async PostgresQueryInterface.insert (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\dialects\abstract\query-interface.js:308:21)
+    at async model.save (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:2490:35)
+    at async refresh_tokens.create (D:\FULLSTACK\one-lans\node_modules\sequelize\lib\model.js:1362:12)
+    at async login (file:///D:/FULLSTACK/one-lans/controllers/auth.controller.js:29:5)

@@ -1,33 +1,21 @@
-import { userJwtService } from "../../services/jwt.service.js";
+export default function selfGuard(req, res, next) {
+  const paramId =
+    req.params.id || req.params.client_id || req.params.freelancer_id;
+  const { id: userId, role, admin_type } = req.user || {};
 
-export default (req, res, next) => {
-  try {
-    const authHeader = req.headers.authorization;
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      return res.status(401).json({ message: "Authorization token required" });
-    }
-
-    const token = authHeader.split(" ")[1];
-    const decoded = userJwtService.verifyAccessToken(token);
-
-    const tokenUserId = decoded.id;
-    const targetUserId = req.params.id || req.body.id;
-
-    if (!targetUserId) {
-      return res
-        .status(400)
-        .json({ message: "User ID required in params or body" });
-    }
-
-    if (String(tokenUserId) !== String(targetUserId)) {
-      return res
-        .status(403)
-        .json({ message: "Faqat oz profilingizni tahrirlashingiz mumkin" });
-    }
-
-    req.user = decoded;
-    next();
-  } catch (error) {
-    return res.status(403).json({ message: "Invalid or expired token" });
+  if (!paramId || !userId) {
+    return res.status(400).json({ message: "Missing ID parameters." });
   }
-};
+
+  if (role === "admin" && admin_type === "super_admin") {
+    return next();
+  }
+
+  if (String(paramId) !== String(userId)) {
+    return res
+      .status(403)
+      .json({ message: "Access denied. Not your resource." });
+  }
+
+  next();
+}
